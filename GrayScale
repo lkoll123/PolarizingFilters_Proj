@@ -1,0 +1,18 @@
+from PIL import Image
+
+
+Def GrayScale(filename, path):
+  fullpath = path + '\\' + filename
+  im = Image.open(fullpath)
+  Width, Height = im.size
+  scale = 2.83 #roughly 255/90
+  
+  newimg = 
+  
+  for x in range (0, Width):
+    for y in range (0, Height):
+	    originalrgb = im.getpixel((x, y))
+	    newrgb = int(((originalrgb[0] + originalrgb[1]+ originalrgb[2])/3)
+      Scalergb = int(newrgb - (newrgb%scale))
+	    im.putpixel((x, y), (newrgb, newrgb, newrgb))
+  im.show()
